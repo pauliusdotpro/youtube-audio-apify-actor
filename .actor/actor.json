@@ -13,5 +13,5 @@
   "storages": {
     "dataset": "./dataset_schema.json"
   },
-  "environmentVariables": {}
+  "output": "./output_schema.json"
 }

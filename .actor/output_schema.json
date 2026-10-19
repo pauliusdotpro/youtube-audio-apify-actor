@@ -1,0 +1,19 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Converted audio",
+  "description": "One dataset item per input URL with the download link or the error.",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Converted audio",
+      "description": "Download links, file names, formats, sizes and errors.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    },
+    "files": {
+      "type": "string",
+      "title": "Stored audio files",
+      "description": "Audio files saved to the key-value store when storeFile is on.",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys"
+    }
+  }
+}
