@@ -1,0 +1,60 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "url": { "type": "string" },
+      "status": { "type": "string", "enum": ["succeeded", "failed"] },
+      "videoId": { "type": ["string", "null"] },
+      "link": { "type": ["string", "null"] },
+      "linkExpiresAt": { "type": ["string", "null"] },
+      "fileName": { "type": ["string", "null"] },
+      "format": { "type": ["string", "null"] },
+      "quality": { "type": ["string", "null"] },
+      "contentType": { "type": ["string", "null"] },
+      "fileSize": { "type": ["integer", "null"] },
+      "durationSeconds": { "type": ["number", "null"] },
+      "keyValueStoreKey": { "type": ["string", "null"] },
+      "keyValueStoreUrl": { "type": ["string", "null"] },
+      "error": { "type": ["string", "null"] },
+      "errorCode": { "type": ["string", "null"] }
+    }
+  },
+  "views": {
+    "overview": {
+      "title": "Converted audio",
+      "transformation": {
+        "fields": ["url", "status", "fileName", "format", "fileSize", "durationSeconds", "link", "linkExpiresAt", "keyValueStoreUrl", "error"]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "url": { "label": "Source URL", "format": "link" },
+          "status": { "label": "Status", "format": "text" },
+          "fileName": { "label": "File name", "format": "text" },
+          "format": { "label": "Format", "format": "text" },
+          "fileSize": { "label": "Size (bytes)", "format": "number" },
+          "durationSeconds": { "label": "Duration (s)", "format": "number" },
+          "link": { "label": "Download link", "format": "link" },
+          "linkExpiresAt": { "label": "Link expires", "format": "date" },
+          "keyValueStoreUrl": { "label": "Stored file", "format": "link" },
+          "error": { "label": "Error", "format": "text" }
+        }
+      }
+    },
+    "failures": {
+      "title": "Failed conversions",
+      "transformation": {
+        "fields": ["url", "errorCode", "error"]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "url": { "label": "Source URL", "format": "link" },
+          "errorCode": { "label": "Code", "format": "text" },
+          "error": { "label": "Error", "format": "text" }
+        }
+      }
+    }
+  }
+}

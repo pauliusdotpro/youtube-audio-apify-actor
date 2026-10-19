@@ -1,0 +1,17 @@
+{
+  "actorSpecification": 1,
+  "name": "youtube-audio-converter",
+  "title": "YouTube to MP3 & Audio Converter",
+  "description": "Convert YouTube videos to MP3, M4A, WAV, FLAC, AAC, Opus, OGG or WebM audio. Pick quality, trim clips, get a direct download link or store the file in the key-value store. Pay only per successful conversion.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "minMemoryMbytes": 128,
+  "maxMemoryMbytes": 1024,
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "environmentVariables": {}
+}

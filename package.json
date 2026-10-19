@@ -1,0 +1,19 @@
+{
+  "name": "youtube-audio-converter",
+  "version": "1.0.0",
+  "description": "Apify Actor: convert YouTube videos to MP3, M4A, WAV, FLAC and other audio formats.",
+  "type": "module",
+  "main": "src/main.js",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/main.js",
+    "check": "node --check src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.7.2"
+  },
+  "license": "UNLICENSED"
+}

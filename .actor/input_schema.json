@@ -1,0 +1,67 @@
+{
+  "title": "YouTube to MP3 & Audio Converter input",
+  "description": "Paste one or more YouTube video URLs (or 11-character video IDs) and choose the output audio format and quality. Each successfully converted video is charged as one 'audio-conversion' event.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "YouTube video URLs",
+      "type": "array",
+      "description": "YouTube video URLs (watch, youtu.be, shorts, embed, music.youtube.com) or plain video IDs. Maximum source length is 3 hours.",
+      "editor": "stringList",
+      "prefill": ["https://www.youtube.com/watch?v=jNQXAC9IVRw"],
+      "minItems": 1,
+      "maxItems": 1000
+    },
+    "format": {
+      "title": "Output format",
+      "type": "string",
+      "description": "Audio container/codec of the output file.",
+      "editor": "select",
+      "enum": ["mp3", "m4a", "wav", "flac", "aac", "opus", "ogg", "webm"],
+      "enumTitles": ["MP3", "M4A (AAC)", "WAV (lossless, large)", "FLAC (lossless)", "AAC", "Opus", "OGG Vorbis", "WebM (Opus)"],
+      "default": "mp3"
+    },
+    "quality": {
+      "title": "Audio quality",
+      "type": "string",
+      "description": "'standard' is a good default, 'best' keeps the highest available source quality, numeric values are target bitrates in kbps (lossy formats only).",
+      "editor": "select",
+      "enum": ["standard", "best", "128", "192", "256", "320"],
+      "enumTitles": ["Standard", "Best available", "128 kbps", "192 kbps", "256 kbps", "320 kbps"],
+      "default": "standard"
+    },
+    "startTime": {
+      "title": "Clip start (seconds)",
+      "type": "integer",
+      "description": "Optional. Start of the clip in seconds from the beginning of the video. Applied to every URL.",
+      "editor": "number",
+      "minimum": 0,
+      "sectionCaption": "Trimming (optional)"
+    },
+    "endTime": {
+      "title": "Clip end (seconds)",
+      "type": "integer",
+      "description": "Optional. End of the clip in seconds. Must be greater than the start. Applied to every URL.",
+      "editor": "number",
+      "minimum": 1
+    },
+    "storeFile": {
+      "title": "Save audio file to key-value store",
+      "type": "boolean",
+      "description": "Download each converted file and save it into this run's key-value store, so it stays available after the short-lived download link expires (subject to your Apify storage retention).",
+      "default": false,
+      "sectionCaption": "Advanced"
+    },
+    "maxConcurrency": {
+      "title": "Max parallel conversions",
+      "type": "integer",
+      "description": "How many videos are converted at the same time.",
+      "editor": "number",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 3
+    }
+  },
+  "required": ["urls"]
+}

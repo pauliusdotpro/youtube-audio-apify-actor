@@ -1,0 +1,7 @@
+{
+  "audio-conversion": {
+    "eventTitle": "Audio conversion",
+    "eventDescription": "Charged once for each YouTube video that is successfully converted to an audio file. Failed or unavailable videos are not charged.",
+    "eventPriceUsd": 0.01
+  }
+}
