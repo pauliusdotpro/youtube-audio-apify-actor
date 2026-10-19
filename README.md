@@ -95,7 +95,7 @@ Failed or skipped videos are free. If you set a maximum cost for the run, the Ac
 ## Using it from code
 
 ```bash
-curl -X POST "https://api.apify.com/v2/acts/GHSTUDIOS~youtube-audio-converter/run-sync-get-dataset-items?token=$APIFY_TOKEN" \
+curl -X POST "https://api.apify.com/v2/acts/ghstudios~youtube-audio-apify-actor/run-sync-get-dataset-items?token=$APIFY_TOKEN" \
   -H 'Content-Type: application/json' \
   -d '{"urls":["https://www.youtube.com/watch?v=jNQXAC9IVRw"],"format":"mp3"}'
 ```
